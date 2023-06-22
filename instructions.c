@@ -21,11 +21,20 @@ instruction_t *initInstructions(void)
     instructions[1].opcode = "pall";
     instructions[1].f = _pall;
    
-    instructions[2].opcode = "pall";
+    instructions[2].opcode = "pint";
     instructions[2].f = _pint;
  
-    instructions[3].opcode = "pall";
-    instructions[3].f = _pop;
+    instructions[3].opcode = "pop";
+    instructions[3].f = _pop; 
+        
+    instructions[4].opcode = "swap";
+    instructions[4].f = _swap;
+    
+    instructions[5].opcode = "add";
+    instructions[5].f = _add;
+    
+    instructions[6].opcode = "nop";
+    instructions[6].f = _nop;
 
     return instructions;
 }
