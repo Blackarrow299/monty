@@ -38,6 +38,9 @@ instruction_t *initInstructions(void)
 
     instructions[7].opcode = "sub";
     instructions[7].f = _sub;
+    instructions[8].opcode = "pchar";
+    instructions[8].f = _pchar;
+
 
     return instructions;
 }

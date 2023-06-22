@@ -57,4 +57,5 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 #endif

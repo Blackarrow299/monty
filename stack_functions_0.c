@@ -54,15 +54,15 @@ void _pall(stack_t **stack, unsigned int line_number)
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	stack_t *runner;
+	stack_t *current;
 
-	runner = *stack;
-	if (runner == NULL)
+	current = *stack;
+	if (current == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", runner->n);
+	printf("%d\n", current->n);
 }
 
 /**
@@ -94,17 +94,17 @@ void _pop(stack_t **stack, unsigned int line_number)
 
 void _swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *runner;
+	stack_t *current;
 	int tmp;
 
-	runner = *stack;
-	if (runner == NULL || runner->next == NULL)
+	current = *stack;
+	if (current == NULL || current->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	tmp = runner->n;
-	runner->n = runner->next->n;
-	runner->next->n = tmp;
+	tmp = current->n;
+	current->n = current->next->n;
+	current->next->n = tmp;
 }
 

@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdlib.h>
 
 /**
  * _add - add top of stack y second top stack
@@ -79,5 +80,29 @@ void _sub(stack_t **stack, unsigned int line_number)
 	(*stack)->n = sub;
 }
 
+/**
+ * _pchar - prints the ASCII value of a number
+ * @stack: pointer to the top of the stack
+ * @line_number: the index of the current line
+ *
+ */
+void _pchar(stack_t **stack, unsigned int line_number) {
+  stack_t *current;
 
+	current = *stack;
+	if (current == NULL)
+	{
+		fprintf(stderr, "L%i: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+  if (current->n >= 0 && current->n <= 127) {
+    char ch = (char)current->n;
+    printf("%c\n", ch);
+  } else {
+    printf("L%i: can't pchar, value out of range\n", line_number);
+    exit(EXIT_FAILURE);
+  }
+	printf("%c\n", current->n);
+}
 
