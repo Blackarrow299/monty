@@ -23,3 +23,4 @@ int _isnumber(char *str)
 
     return (1);
 }
+

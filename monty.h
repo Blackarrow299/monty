@@ -1,6 +1,10 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define MAX_LINE_LENGTH 1024
+#define MAX_LINE_WORDS 100
+#define INSTRUCTION_NUMBER 10
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,10 +41,16 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+instruction_t* initInstructions(); 
+instruction_t* getInstructionByOpcode(instruction_t* instructions, char* opcode); 
+char** splitLine(const char* line, int* wordCount);
+void doubleFree(char** words, int wordCount); 
 void _freestack(stack_t **stack);
 char *_stdup(const char *str);
 int _isnumber(char *number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
-
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 #endif

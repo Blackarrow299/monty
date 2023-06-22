@@ -18,3 +18,4 @@ char *_stdup(const char *str)
 
 	return copy;
 }
+
